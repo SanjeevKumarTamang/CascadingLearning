@@ -13,10 +13,7 @@ import cascading.operation.Identity;
 import cascading.pipe.Each;
 import cascading.pipe.Pipe;
 import cascading.pipe.joiner.InnerJoin;
-import filterOperation.FilterOperationMain;
 
-import java.io.*;
-import java.util.Scanner;
 
 /**
  * Created by sktamang on 10/12/15.
@@ -29,11 +26,8 @@ public class Application {
 //        header (true as the second parameter) and "," as the
 //        delimiter (third parameter). Similarly, source2Scheme
 //        represents the tuple layout of the second file.
-        Scheme source1Scheme = new TextDelimited(new Fields(
-                "author", "organization", "document", "keyword"), true,
-                ",");
-        Scheme source2Scheme = new TextDelimited(new Fields(
-                "department", "employee"), true, ",");
+        Scheme source1Scheme = new TextDelimited(new Fields("author", "organization", "document", "keyword"), true, ",");
+        Scheme source2Scheme = new TextDelimited(new Fields("department", "employee"), true, ",");
 
         String file1 ="authorInfo";
         String file2 = "employeeDepartment";
