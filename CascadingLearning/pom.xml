@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>sanjeev</groupId>
+    <artifactId>sanjeev</artifactId>
+    <version>1.0</version>
+
+    <repositories>
+        <repository>
+            <id>maven.org</id>
+            <url>http://repo2.maven.org/maven2/</url>
+        </repository>
+
+        <repository>
+            <id>ClouderaMavenRepository</id>
+            <name>Cloudera Repository for Maven</name>
+            <url>https://repository.cloudera.com/content/repositories/releases/</url>
+            <layout>default</layout>
+        </repository>
+        <repository>
+            <id>sonatype-snapshots</id>
+            <name>Sonatype Snapshots Repository</name>
+            <url>http://oss.sonatype.org/content/repositories/snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>sonatype-releases</id>
+            <name>Sonatype Releases Repository</name>
+            <url>http://oss.sonatype.org/content/repositories/releases/</url>
+        </repository>
+
+
+        <repository>
+            <id>conjars.org</id>
+            <url>http://conjars.org/repo</url>
+        </repository>
+        <repository>
+            <id>clojars</id>
+            <url>http://clojars.org/repo</url>
+        </repository>
+        <repository>
+            <id>repository.liveramp.com</id>
+            <name>liveramp-repositories</name>
+            <url>http://repository.liveramp.com/artifactory/liveramp-repositories</url>
+        </repository>
+        <!-- <repository>
+             <id>central</id>
+             <name>libs-release</name>
+             <url>http://plugin.deerwalk.com/artifactory/repo/</url>
+         </repository>-->
+    </repositories>
+
+
+    <dependencies>
+    <dependency>
+        <groupId>org.elasticsearch</groupId>
+        <artifactId>elasticsearch-hadoop-cascading</artifactId>
+        <version>2.1.0</version>
+    </dependency>
+    <!--<dependency>-->
+        <!--<groupId>jackson</groupId>-->
+        <!--<artifactId>jackson-all</artifactId>-->
+        <!--<version>1.9.5</version>-->
+        <!--<scope>system</scope>-->
+        <!--<systemPath>${project.basedir}/lib/jackson-all-1.9.5.jar</systemPath>-->
+    <!--</dependency>-->
+    <dependency>
+        <groupId>joda-time</groupId>
+        <artifactId>joda-time</artifactId>
+        <version>1.6.2</version>
+    </dependency>
+        <dependency>
+            <groupId>org.apache.directory.studio</groupId>
+            <artifactId>org.apache.commons.io</artifactId>
+            <version>2.4</version>
+        </dependency>
+    <!--<dependency>-->
+        <!--<groupId>com.twitter</groupId>-->
+        <!--<artifactId>elephant-bird</artifactId>-->
+        <!--<version>2.0.3</version>-->
+        <!--<scope>system</scope>-->
+        <!--<systemPath>${project.basedir}/lib/elephant-bird-2.0.3.jar</systemPath>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+        <!--<groupId>com.milliman</groupId>-->
+        <!--<artifactId>mara</artifactId>-->
+        <!--<version>3.4</version>-->
+        <!--<scope>system</scope>-->
+        <!--<systemPath>${project.basedir}/lib/mara.jar</systemPath>-->
+    <!--</dependency>-->
+    <dependency>
+        <groupId>com.twitter</groupId>
+        <artifactId>maple</artifactId>
+        <version>0.2.0</version>
+    </dependency>
+
+    <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.17</version>
+        <optional>true</optional>
+    </dependency>
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>1.6.5</version>
+    </dependency>
+    <dependency>
+        <groupId>commons-cli</groupId>
+        <artifactId>commons-cli</artifactId>
+        <version>1.2</version>
+    </dependency>
+
+    <dependency>
+        <groupId>cascading</groupId>
+        <artifactId>cascading-core</artifactId>
+        <version>2.6.0</version>
+    </dependency>
+
+    <dependency>
+        <groupId>cascading</groupId>
+        <artifactId>cascading-test</artifactId>
+        <version>2.0.8</version>
+    </dependency>
+    <dependency>
+        <groupId>cascading</groupId>
+        <artifactId>cascading-platform</artifactId>
+        <version>2.6.0</version>
+    </dependency>
+    <dependency>
+        <groupId>cascading</groupId>
+        <artifactId>cascading-local</artifactId>
+        <version>2.6.0</version>
+    </dependency>
+    <dependency>
+        <groupId>cascading</groupId>
+        <artifactId>cascading-xml</artifactId>
+        <version>2.6.0</version>
+    </dependency>
+
+    <dependency>
+        <groupId>cascading</groupId>
+        <artifactId>cascading-hadoop</artifactId>
+        <version>2.6.0</version>
+    </dependency>
+
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.8.1</version>
+    </dependency>
+    <dependency>
+        <groupId>net.sf.opencsv</groupId>
+        <artifactId>opencsv</artifactId>
+        <version>2.1</version>
+    </dependency>
+    <dependency>
+        <groupId>com.google.protobuf</groupId>
+        <artifactId>protobuf-java</artifactId>
+        <version>2.5.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.elasticsearch</groupId>
+        <artifactId>elasticsearch</artifactId>
+        <version>1.4.0</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.jdom</groupId>
+        <artifactId>jdom2</artifactId>
+        <version>2.0.5</version>
+    </dependency>
+    <dependency>
+        <groupId>org.skyscreamer</groupId>
+        <artifactId>jsonassert</artifactId>
+        <version>1.1.1</version>
+    </dependency>
+    <!--<dependency>-->
+        <!--<groupId>com.deerwalk.das</groupId>-->
+        <!--<artifactId>engine-core</artifactId>-->
+        <!--<version>1.0</version>-->
+    <!--</dependency>-->
+    <!--        <dependency>
+                <groupId>org.elasticsearch</groupId>
+                <artifactId>elasticsearch-hadoop</artifactId>
+                <version>2.1.0</version>
+            </dependency>-->
+
+    <!--driven plugin dependency-->
+    <!--<dependency>
+        <groupId>driven</groupId>
+        <artifactId>driven-plugin</artifactId>
+        <version>1.1</version>
+    </dependency>-->
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi-ooxml</artifactId>
+        <version>3.9</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.xmlbeans</groupId>
+        <artifactId>xmlbeans</artifactId>
+        <version>2.3.0</version>
+    </dependency>
+    <dependency>
+        <groupId>dom4j</groupId>
+        <artifactId>dom4j</artifactId>
+        <version>1.6.1</version>
+    </dependency>
+
+</dependencies>
+    <build>
+        <plugins>
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-compiler-plugin</artifactId>-->
+                <!--<version>2.3.2</version>-->
+                <!--<configuration>-->
+                    <!--<encoding>${project.build.sourceEncoding}</encoding>-->
+                    <!--<source>1.6</source>-->
+                    <!--<target>1.6</target>-->
+                    <!--<optimize>true</optimize>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                            <overWriteReleases>false</overWriteReleases>
+                            <overWriteSnapshots>false</overWriteSnapshots>
+                            <overWriteIfNewer>true</overWriteIfNewer>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--<plugin>-->
+                <!--<artifactId>maven-assembly-plugin</artifactId>-->
+                <!--<configuration>-->
+                    <!--<descriptorRefs>-->
+                        <!--<descriptorRef>jar-with-dependencies</descriptorRef>-->
+                    <!--</descriptorRefs>-->
+                    <!--<archive>-->
+                        <!--<manifest>-->
+                            <!--<mainClass>com.deerwalk.loader.App</mainClass>-->
+                        <!--</manifest>-->
+                    <!--</archive>-->
+
+                <!--</configuration>-->
+            <!--</plugin>-->
+
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-jar-plugin</artifactId>-->
+                <!--<version>2.3.1</version>-->
+                <!--<configuration>-->
+                    <!--<archive>-->
+                        <!--<manifest>-->
+                            <!--<addClasspath>true</addClasspath>-->
+                            <!--<classpathPrefix>lib/</classpathPrefix>-->
+                            <!--<mainClass>com.deerwalk.loader.App</mainClass>-->
+                        <!--</manifest>-->
+                        <!--<manifestEntries>-->
+                            <!--<Class-Path>lib/elephant-bird-2.0.3.jar lib/mara.jar lib/driven-plugin-1.1-shaded.jar</Class-Path>-->
+                        <!--</manifestEntries>-->
+                    <!--</archive>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+            <!--<plugin>-->
+                <!--<artifactId>maven-antrun-plugin</artifactId>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>generate-sources</id>-->
+                        <!--<phase>generate-sources</phase>-->
+                        <!--<configuration>-->
+                            <!--<tasks>-->
+                                <!--<mkdir dir="target/generated-sources"/>-->
+                                <!--<exec executable="protoc">-->
+                                    <!--<arg value="-java_out=src/main/java/"/>-->
+                                    <!--<arg value="src/main/proto/MARA.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/Member_Attribution.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/CCE_patientsearch.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/MemberHRABiometric.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/DUPLICATE_CLAIMS.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/MemberProfile.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/WorkersCompensations.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/ConditionalSaving.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/Benecore_Contract.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/HedisMemberAnalytics.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/PqaMemberAnalytics.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/Osha.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/MemberOsha.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/MemberKyn.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/Network.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/enterprise/QualityMeasures.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/MemberReadmission.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/VisitAdmissionAmount.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/AmountObject.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/HighCostClaimants.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/PlanDesignEnrollments.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/BenefitPlanLookup.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/PremiumAmount.proto"></arg>-->
+                                    <!--<arg value="src/main/proto/Member_analytics.proto"/>-->
+                                    <!--<arg value="src/main/proto/SPAnalytics.proto"></arg>-->
+
+                                <!--</exec>-->
+                            <!--</tasks>-->
+                            <!--<sourceRoot>src/main/java/</sourceRoot>-->
+                        <!--</configuration>-->
+                        <!--<goals>-->
+                            <!--<goal>run</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
+
+        </plugins>
+    </build>
+
+
+</project>
