@@ -17,6 +17,7 @@ public class SampleAggregator extends BaseOperation<SampleAggregator.Context> im
     {// expects 2 argument, fail otherwise
         super(2, new Fields("total_kept"));
     }
+
     public SampleAggregator( Fields calcFields )
     {// expects 2 argument, fail otherwise
         super( 2, calcFields );
