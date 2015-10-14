@@ -36,17 +36,18 @@ public class SentFunc extends BaseOperation<Tuple> implements Function<Tuple> {
                 (arguments.getString(1));
         int sentCounter = 0;
         for (String sent : sentences) {
-// get our previously created Tuple
+        // get our previously created Tuple
             Tuple result = call.getContext();
-// First field is document name
+        // First field is document name
             result.set(0, arguments.getString(0));
-// Second field is sentence number
+        // Second field is sentence number
             result.set(1, sentCounter);
-// Third field is the sentence
+        // Third field is the sentence
             result.set(2, sent);
-// return the result tuple
+        // return the result tuple
             call.getOutputCollector().add(result);
             sentCounter++;
+            System.out.println("res = " + result.print());
         }
     }
 

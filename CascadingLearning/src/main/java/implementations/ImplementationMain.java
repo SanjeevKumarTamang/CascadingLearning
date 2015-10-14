@@ -1,5 +1,9 @@
 package implementations;
 
+import cascading.flow.Flow;
+import cascading.flow.FlowConnector;
+import cascading.flow.local.LocalFlowConnector;
+import cascading.pipe.Each;
 import cascading.pipe.Pipe;
 import cascading.scheme.Scheme;
 import cascading.scheme.local.TextDelimited;
@@ -15,12 +19,21 @@ public class ImplementationMain {
 
     public static void main(String[] args){
 
-        Scheme sourceScheme=new TextDelimited(new Fields(),true,",");
-        Tap sourceTap=new FileTap(sourceScheme,args[0]);
+        String inputFile="memberInfo";
+        String outputFile="memberInfoOutput";
 
-        Scheme sinkScheme=new TextDelimited(new Fields(),true,",");
-        Tap sinkTap=new FileTap(sinkScheme,args[1], SinkMode.REPLACE);
+        Scheme sourceScheme=new TextDelimited(true,",");
+        Tap sourceTap=new FileTap(sourceScheme,inputFile);
+
+        Scheme sinkScheme=new TextDelimited(true,",");
+        Tap sinkTap=new FileTap(sinkScheme,outputFile, SinkMode.REPLACE);
 
         Pipe filter=new Pipe("filter");
+        filter=new Each(filter,new Raise("mechanic"));
+
+        FlowConnector flowConnector= new LocalFlowConnector();
+        Flow flow=flowConnector.connect(sourceTap,sinkTap,filter);
+        flow.complete();
+
     }
 }
