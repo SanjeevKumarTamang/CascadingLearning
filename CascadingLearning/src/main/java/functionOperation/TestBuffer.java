@@ -26,7 +26,7 @@ public class TestBuffer {
     public static void main(String[] args) {
 
         Fields fieldDeclarationInput = new Fields("document","text");
-        Fields fieldDeclarationOutput = new Fields("documentname","sentnumber","wordnum", "word");
+        Fields fieldDeclarationOutput = new Fields("documentname","sentnumber","wordnum", "word","customField","comma");
 
         Scheme inputScheme = new TextDelimited(fieldDeclarationInput,true,",");
         Scheme outputScheme = new TextDelimited(fieldDeclarationOutput,true,",");
@@ -47,7 +47,7 @@ public class TestBuffer {
         * Properties properties = new Properties();
         * AppProps.setApplicationJarClass( properties,
         *
-        TestBuffer.class );
+        TestBuffer.class );3
         *
         * FlowConnector flowConnector = new HadoopFlowConnector(
         *

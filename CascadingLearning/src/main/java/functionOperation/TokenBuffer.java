@@ -19,7 +19,7 @@ public class TokenBuffer extends BaseOperation implements Buffer {
         static Fields fieldDeclaration = new Fields(
                 "document","sentnum", "sentence");
         static Fields fieldOutput = new Fields(
-                "documentname","sentnumber", "wordnum", "word");
+                "documentname","sentnumber", "wordnum", "word","customField","comma");
         public TokenBuffer() {
         super(3, fieldOutput);
     }
@@ -30,11 +30,10 @@ public class TokenBuffer extends BaseOperation implements Buffer {
         int sentnum = 0;
         TupleEntry group = bufferCall.getGroup();
         //get all the current argument values for this grouping
-        Iterator<TupleEntry> arguments =
-                bufferCall.getArgumentsIterator();
+        Iterator<TupleEntry> arguments = bufferCall.getArgumentsIterator();
         /* create a Tuple to hold our result values and set
         its document name field */
-        Tuple result = Tuple.size(4);
+        Tuple result = Tuple.size(6);
         int token_count = 0;
         System.out.println("arguments = " + arguments);
         while(arguments.hasNext()){
@@ -43,6 +42,7 @@ public class TokenBuffer extends BaseOperation implements Buffer {
                     NLPUtils.getTokens(tuple.getString(2));
             for (int i = 0; i < tokens.length; i++){
                 String token = tokens[i];
+                System.out.println("token = " + token);
                 if (token == null || token.isEmpty())
                     continue;
                 token_count++;
@@ -50,6 +50,8 @@ public class TokenBuffer extends BaseOperation implements Buffer {
                 result.set(1, sentnum);
                 result.set(2, token_count);
                 result.set(3, token);
+                result.set(4,"mynewToken");
+                result.set(5,"new");
                  // Return the result Tuple
                 bufferCall.getOutputCollector().add( result );
                 /* See if the last token is an abbreviation.
@@ -65,7 +67,6 @@ public class TokenBuffer extends BaseOperation implements Buffer {
                         token_count = 0;
                     }
                 }
-                System.out.println("result in the buffer = " + result);
             } // for
         }// while
     }// operate

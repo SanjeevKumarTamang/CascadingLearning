@@ -22,7 +22,9 @@ public class ImplementationMain {
         String inputFile="memberInfo";
         String outputFile="memberInfoOutput";
 
-        Scheme sourceScheme=new TextDelimited(true,",");
+        Fields outputFields=new Fields("name","ageRaise");
+
+        Scheme sourceScheme=new TextDelimited(outputFields,true,",");
         Tap sourceTap=new FileTap(sourceScheme,inputFile);
 
         Scheme sinkScheme=new TextDelimited(true,",");
@@ -30,6 +32,7 @@ public class ImplementationMain {
 
         Pipe filter=new Pipe("filter");
         filter=new Each(filter,new Raise("mechanic"));
+        filter= new Each(filter,new RaiseCalculation());
 
         FlowConnector flowConnector= new LocalFlowConnector();
         Flow flow=flowConnector.connect(sourceTap,sinkTap,filter);
