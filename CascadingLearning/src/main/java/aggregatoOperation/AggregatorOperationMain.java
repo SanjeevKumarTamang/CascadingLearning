@@ -27,7 +27,7 @@ public class AggregatorOperationMain {
 
         Tap source = new FileTap(sourceScheme, args[0]);
         Scheme sinkScheme = new TextDelimited(new Fields(
-                "product_name", "total_kept"));
+                "product_name", "total_kept"),true,",");
         Tap sink = new FileTap(sinkScheme, args[1],
                 SinkMode.REPLACE);
 

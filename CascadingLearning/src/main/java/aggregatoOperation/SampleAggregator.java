@@ -20,7 +20,7 @@ public class SampleAggregator extends BaseOperation<SampleAggregator.Context> im
 
     public SampleAggregator( Fields calcFields )
     {// expects 2 argument, fail otherwise
-        super( 2, calcFields );
+        super(calcFields );
     }
 
     @Override
@@ -31,6 +31,7 @@ public class SampleAggregator extends BaseOperation<SampleAggregator.Context> im
     @Override
     public void aggregate(FlowProcess flowProcess, AggregatorCall<SampleAggregator.Context> aggregatorCall) {
         TupleEntry arguments = aggregatorCall.getArguments();
+        System.out.println("arguments in the aggregate= " + arguments);
         Context context = aggregatorCall.getContext();
         // add the current argument value to the current sum
         context.value += (arguments.getInteger(0)-
@@ -43,7 +44,8 @@ public class SampleAggregator extends BaseOperation<SampleAggregator.Context> im
         // create a Tuple to hold our result values
         Tuple result = new Tuple();
         // set the sum
-        result.add( context.value );
+        result.add(context.value);
+        System.out.println("result = " + result);
         // return the result Tuple
         aggregatorCall.getOutputCollector().add( result );
 

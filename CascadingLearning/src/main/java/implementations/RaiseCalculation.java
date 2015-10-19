@@ -14,12 +14,12 @@ public class RaiseCalculation extends BaseOperation implements Function {
     static Fields fieldOutput = new Fields(
             "name", "raiseAge");
     public RaiseCalculation(){
-        super(6,fieldOutput);
+        super(fieldOutput);
     }
 
     @Override
     public void operate(FlowProcess flowProcess, FunctionCall functionCall) {
         TupleEntry entry=functionCall.getArguments();
-        System.out.println(entry);
+        System.out.println("entry ius----------"+entry);
     }
 }
